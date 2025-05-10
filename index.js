@@ -1,11 +1,17 @@
+//Dependencias
 const morgan = require('morgan');
 const express = require('express');
 const app = express();
+
+//Routes
 const pokemon =require('./routes/pokemon');
 const user = require('./routes/user');
-const cors = require('./middleware-auth');
+
+//Middleware
 const auth = require('./middleware/auth');
+const notFound = require('./middleware/notFound');
 const index = require('./middleware/index');
+
 
 app.use(morgan('dev'));
 app.use(express.json());
@@ -13,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-app.get("/",);
+app.get("/" , index);
 
 
 app.use("/user", user);

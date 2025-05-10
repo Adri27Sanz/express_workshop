@@ -11,6 +11,7 @@ const user = require('./routes/user');
 const auth = require('./middleware/auth');
 const notFound = require('./middleware/notFound');
 const index = require('./middleware/index');
+const cors = require('./middleware/cors');
 
 
 app.use(morgan('dev'));
